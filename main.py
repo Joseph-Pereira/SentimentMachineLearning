@@ -28,7 +28,7 @@ tokenizer = Tokenizer(num_words=10000, oov_token="<OOV>")
 # Load your training data.  This is crucial for fitting the LabelBinarizer correctly.
 # **Replace 'your_training_data.csv' with the actual path to your training data.**
 try:
-    df = pd.read_csv('Datasets/reviews_cleaned.csv')  # Or wherever your data is
+    df = pd.read_csv('Notebooks/reviews_cleaned.csv')  # Or wherever your data is
 except FileNotFoundError:
     print("Error: 'reviews_cleaned.csv' not found.  Please make sure the file is in the correct location.")
     #  You might want to exit the program here or provide a default DataFrame if the program can continue.
@@ -94,7 +94,8 @@ app.layout = html.Div(
 def analyze_sentiment(n_clicks, review_text):
     if n_clicks > 0 and review_text:
         # Applying the same method to clean the text
-        cleaned_review_text = clean_text(review_text)  # Clean the input review
+        # cleaned_review_text = clean_text(review_text)  # Clean the input review
+        cleaned_review_text = review_text
         review_sequence = tokenizer.texts_to_sequences([cleaned_review_text])  # Tokenize the cleaned review
 
         # Preprocess the input review
