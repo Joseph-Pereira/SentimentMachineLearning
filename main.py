@@ -94,8 +94,12 @@ app.layout = html.Div(
 def analyze_sentiment(n_clicks, review_text):
     if n_clicks > 0 and review_text:
         # Applying the same method to clean the text
+<<<<<<< Updated upstream
         # cleaned_review_text = clean_text(review_text)  # Clean the input review
         cleaned_review_text = review_text
+=======
+        cleaned_review_text = clean_text(review_text)  # Clean the input review
+>>>>>>> Stashed changes
         review_sequence = tokenizer.texts_to_sequences([cleaned_review_text])  # Tokenize the cleaned review
 
         # Preprocess the input review
