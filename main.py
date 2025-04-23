@@ -94,10 +94,11 @@ app.layout = html.Div(
 def analyze_sentiment(n_clicks, review_text):
     if n_clicks > 0 and review_text:
         # Applying the same method to clean the text
-        #cleaned_review_text = clean_text(review_text)  # Clean the input review
-        review_sequence = tokenizer.texts_to_sequences([review_text])  # Tokenize the cleaned review
+        cleaned_review_text = clean_text(review_text)  # Clean the input review
+        review_sequence = tokenizer.texts_to_sequences([cleaned_review_text])  # Tokenize the cleaned review
 
         # Preprocess the input review
+
         review_padded = pad_sequences(review_sequence, maxlen=MAX_LEN, truncating='post')
 
         # Check if the padded sequence is empty
@@ -124,13 +125,14 @@ def analyze_sentiment(n_clicks, review_text):
     
 def clean_text(text):
     stop_words = set(stopwords.words('english'))
-    stemmer = PorterStemmer()
-
+    if text is None:
+        return ""
     text = BeautifulSoup(str(text), "html.parser").get_text()
-    text = str(text).lower()  # Convert to lowercase
-    text = re.sub(r'\d+', lambda match: num2words(int(match.group())), text)  # Convert digits to words
-    text = text.translate(str.maketrans('', '', string.punctuation))  # Remove punctuation
-    text = " ".join([word for word in text.split() if word not in stop_words])  # Remove stopwords
+    text = str(text).lower()
+    text = re.sub(r'\d+', lambda match: num2words(int(match.group())), text)
+    text = text.translate(str.maketrans('', '', string.punctuation))
+    text = " ".join([word for word in text.split() if word not in stop_words])
+    # stemmer = PorterStemmer()
     return text
 
 # --- 5. Run the App ---
