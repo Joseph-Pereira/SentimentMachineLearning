@@ -4,7 +4,7 @@ Flask==3.0.3
 gunicorn
 tensorflow
 pandas==2.2.3
-numpy==2.2.4
+numpy<2.0.0
 scikit-learn==1.6.1
 nltk
 beautifulsoup4
