@@ -1,0 +1,130 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1711724456091-d3a0197d82db?auto=format&fit=crop&w=1400&q=80");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0f7fa;
+    text-shadow: 1px 1px 3px #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: #5bb1bb;
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 0 30px rgba(76, 193, 240, 0.3);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #00ccff;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #00ffcc;
+    padding-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 17px;
+  
+    color: #00ccff;
+}
+
+.text-area {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    color: #000000;
+    resize: vertical;
+    margin-bottom: 15px;
+}
+
+.text-area:focus {
+    background-color: #f5fcff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    background: linear-gradient(135deg, #00FFFF, #007FFF);
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #007FFF, #00FFFF);
+    transform: scale(1.02);
+}
+
+.sentiment-display {
+    margin-top: 20px;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    color: #E0F7FA;
+    text-shadow: 1px 1px 4px #000;
+}
+
+.text-area::placeholder {
+    color: #90a4ae; 
+    opacity: 1;     
+}
+
+
+.full-display {
+    margin-top: 15px;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    border-radius: 10px;
+    border-left: 3px solid #00ffcc;
+    white-space: pre-wrap;
+    font-family: 'Courier New', Courier, monospace;
+    color: #90a4ae;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .sentiment-display {
+        font-size: 20px;
+    }
+}
