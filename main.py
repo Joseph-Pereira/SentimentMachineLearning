@@ -15,6 +15,7 @@ from nltk.tokenize import word_tokenize
 import nltk
 nltk.download('stopwords')
 from num2words import num2words 
+import os
 
 # --- 1. Load the Model and Data/Tokenizer ---
 model = tf.keras.models.load_model('artifacts/sentiment_model.h5')  
@@ -116,6 +117,9 @@ def clean_text(text):
     text = text.translate(str.maketrans('', '', string.punctuation))
     text = " ".join([word for word in text.split() if word not in stop_words])
     return text
+
+nltk.download('stopwords', download_dir='/tmp')
+nltk.data.path.append('/tmp')
 
 # --- 6. Run the App ---
 if __name__ == "__main__":

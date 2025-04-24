@@ -1,10 +1,9 @@
 services:
   - type: web
-    name: sentiment-analysis-app
+    name: sentiment-analyzer
     env: python
-    plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn main:server
-    autoDeploy: true
-    branch: main
-  
+    startCommand: gunicorn main:app.server
+    envVars:
+      - key: NLTK_DATA
+        value: /nltk
