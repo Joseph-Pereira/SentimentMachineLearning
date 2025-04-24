@@ -65,6 +65,8 @@ app.layout = html.Div(
                         html.Div(id="full-output", className="full-display")
                     ]
                 ),
+
+                
             ]
         )
     ]
